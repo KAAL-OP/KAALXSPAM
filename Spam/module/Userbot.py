@@ -1,33 +1,30 @@
 
-# RiZoeL X - Telegram Projects
-# (c) 2022 - 2023 RiZoeL
-# Don't Kang Bitch -!
-
 
 import os
 import sys
 import asyncio
 import datetime
 import time
-from SpamX import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time)
+from Spam import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram import __version__ as pyro_vr             
                 
 
-pongg = PING_MSG if PING_MSG else "Sᴘᴀᴍ X"
+pongg = PING_MSG if PING_MSG else "Kaal X"
 RIZ_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/ec832fc9107fd21edfee3.jpg"
-Alivemsg = ALIVE_MSG if ALIVE_MSG else "𝗦𝗽𝗮𝗺𝗫 𝗛𝗲𝗿𝗲."
+Alivemsg = ALIVE_MSG if ALIVE_MSG else "Kaal Pyrogram spam bot."
 
 
 rizoel = f"⁂ {Alivemsg} ⁂\n\n"
 rizoel += f"━───────╯•╰───────━\n"
-rizoel += f"➠ **ᴘʏᴛʜᴏɴ ᴠᴇʀsɪᴏɴ** : `3.10.4`\n"
-rizoel += f"➠ **ᴘʏʀᴏɢʀᴀᴍ ᴠᴇʀsɪᴏɴ** : `{pyro_vr}`\n"
-rizoel += f"➠ **SᴘᴀᴍX ᴠᴇʀsɪᴏɴ**  : `{__version__}`\n"
-rizoel += f"➠ **ᴄʜᴀɴɴᴇʟ** : [Join.](https://t.me/RiZoeLX)\n"
+rizoel += f"➠ **Python version** : `3.10.4`\n"
+rizoel += f"➠ **Pyrogram version** : `{pyro_vr}`\n"
+rizoel += f"➠ **Spam version**  : `{__version__}`\n"
+rizoel += f"➠ **Channel** : [support channel.](https://t.me/Murat_30_God)\n"
+rizoel += f"➠ **Group** : [support Group.](https://t.me/kaalxsupport)\n"
 rizoel += f"━───────╮•╭───────━\n\n"
-rizoel += f"➠ **Source Code:** [•Repo•](https://github.com/RiZoeLX/SpamX)"
+rizoel += f"➠ **Source Code:** [•Repo•](https://github.com/KAAL-OP/Spam)"
 
 
 async def get_time(seconds: int) -> str:
