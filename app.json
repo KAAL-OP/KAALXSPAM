@@ -1,7 +1,7 @@
 {
       "name": "kaalx Spam",
       "description": "A Pyrogram Based Span Bots With Many Cmds Fast And Stable",
-      "logo": "https://telegra.ph/file/ec832fc9107fd21edfee3.jpg",
+      "logo": "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg",
       "keywords": [
         "telegram",
         "PYROGRAM",
@@ -9,9 +9,9 @@
         "KaalXSpam",
         "SpamBots"
       ],   
-  "repository": "https://github.com/kaal-op",
-  "website": "https://github.com/kaal-op",
-  "success_url": "https://t.me/kaal-op",
+  "repository": "https://github.com/kaal0408",
+  "website": "https://github.com/kaal0408",
+  "success_url": "https://t.me/kaal0408",
   "env": {
              "API_ID": {
         "description": "Fill Api ID Take this value from My.telegram.org",
