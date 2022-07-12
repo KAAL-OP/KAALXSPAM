@@ -1,10 +1,10 @@
-GRP = "@DNHxHELL|@RiZoeLXSpam|@ArrayCoreChats|DNHxHELL|RiZoeLXSpam|ArrayCoreChats"
+GRP = "@kaalxsupport|@Astro_HelpChat"
 
-GROUP = [-1001321613309, -1001749467927, -1001511742995, -1001771478102, -1001162160257]
+GROUP = [-1001569474379, -1001359155814]
 
-RiZoeLX = [1517994352, 2086101519, 1789859817, 5176432397]
+KAALX = [2068551800, 5174965229, 1366616835]
 
-Owners = "@TheRiZoeL|@TheVenomxd|RiZoeL"
+Owners = "@Hayat_Murat_30|@Alone_loverBoy|@status_star"
 
 REPLYRAID = [
     "𝙈𝘼𝘿𝘼𝙍𝘾𝙃𝙊𝘿",
