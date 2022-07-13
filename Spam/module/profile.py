@@ -1,21 +1,19 @@
-# RiZoeL X - Telegram Projects
-# (c) 2022 - 2023 RiZoeL
-# Don't Kang Bitch -!
 
 
 
 import os
 import sys
 from random import choice
-from SpamX import (OWNER_ID, HNDLR, SUDO_USERS, hl, LOGS_CHANNEL)
+from Spam import (DEVS, HNDLR, SUDO_USERS, hl, LOGS_CHANNEL)
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from SpamX.data import *
+from Spam.data import *
 
 Usage = f"**❌ Wrong Usage ❌** \n Type: `{HNDLR}help owner`"
-Media = "SpamX/downloads/Profile.jpg"
+Media = "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg"
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["setpic"], prefixes=HNDLR))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["setpic"], prefixes=HNDLR)
+@Client.on_message(filters.user(DEVS) & filters.command(["setpic"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["setpic"], prefixes=HNDLR))
 async def setpic(xspam: Client, e: Message):
      replied = e.reply_to_message
@@ -34,14 +32,15 @@ async def setpic(xspam: Client, e: Message):
              print(a)
              pass
       
-etc_bio = "ᴜsᴇʀ ᴏғ ʀɪᴢᴏᴇʟ x sᴘᴀᴍ"
+etc_bio = "kaal x user ,join @kaalxsupport"
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["setname"], prefixes=HNDLR))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["setname"], prefixes=HNDLR))
+@Client.on_message(filters.user(DEVS) & filters.command(["setname"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["setname"], prefixes=HNDLR))
 async def setname(xspam: Client, e: Message): 
-      Rizoel = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      if len(Rizoel) == 1:
-          name = str(Rizoel[0])
+      Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
+      if len(Kaal) == 1:
+          name = str(Kaal[0])
           try:
             await xspam.update_profile(first_name=name, bio=etc_bio)
             await e.reply_text(f"**Profile Name Changed Successfully !!** \n\n **New Name:** {name}")
@@ -57,12 +56,13 @@ async def setname(xspam: Client, e: Message):
              print(a)
              pass
 
-@Client.on_message(filters.user(OWNER_ID) & filters.command(["setbio"], prefixes=HNDLR))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["setbio"], prefixes=HNDLR))
+@Client.on_message(filters.user(DEVS) & filters.command(["setbio"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["setbio"], prefixes=HNDLR))
 async def setbio(xspam: Client, e: Message):
-      Rizoel = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
-      if len(Rizoel) == 1:
-          xd = str(Rizoel[0])
+      Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
+      if len(Kaal) == 1:
+          xd = str(Kaal[0])
           ok = await xspam.get_me()
           nam = ok.first_name
           nam2 = ok.last_name
