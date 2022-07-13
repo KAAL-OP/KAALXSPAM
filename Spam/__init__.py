@@ -70,7 +70,7 @@ DEVS = [2068551800, 5174965229]
 for x in DEVS:
     SUDO_USERS.append(x)
 
-SUDO_USERS.append(OWNER_ID)
+
 
 
 # SUDO_USERS = list(filter(lambda x: x, map(int, os.getenv("SUDO_USERS", "1517994352 1789859817").split())))
