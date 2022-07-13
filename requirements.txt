@@ -5,3 +5,5 @@ gitpython
 asyncio
 python-dotenv
 tgcrypto
+
+telethon
