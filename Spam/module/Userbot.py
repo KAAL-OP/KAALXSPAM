@@ -68,7 +68,7 @@ async def ping(_, e: Message):
 async def alive(xspam: Client, e: Message):
        if ".jpg" in KAAL_PIC or ".png" in KAAL_PIC:
               await xspam.send_photo(e.chat.id, KAAL_PIC, caption=manjeet)
-       if ".mp4" in KAAL_PIC or ".MP4," in RIZ_PIC:
+       if ".mp4" in KAAL_PIC or ".MP4," in KAAL_PIC:
               await xspam.send_video(e.chat.id, KAAL_PIC, caption=manjeet)
 
 
