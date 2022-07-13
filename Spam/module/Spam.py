@@ -86,7 +86,7 @@ async def raid(xspam: Client, e: Message):
           counts = int(Kaal[0])
           if int(e.chat.id) in GROUP:
                return await e.reply_text("**Sorry !! i Can't Spam Here.**")
-          ok = await xspam.get_users(Rizoel[1])
+          ok = await xspam.get_users(Kaal[1])
           id = ok.id
           if int(id) in KAALX:
                 text = f"I can't raid on @kaalxsupport Owner"
