@@ -1,12 +1,12 @@
 import os 
-from pyrogram import Client
+from pyrogram import Client, filters
 import asyncio
 from config import SUDO_USERS
 from config import PMPERMIT
 from pyrogram import filters
 from pyrogram.types import Message
 from pyrogram.types import Message, Voice, InlineKeyboardButton, InlineKeyboardMarkup
-
+from Spam import (HNDLR, SUDO_USERS)
 
 
 PMSET =True
@@ -27,9 +27,9 @@ async def pmPermit(client: USER, message: Message):
             if chat_id in pchats:
                 return
             await message.reply_photo(
-                photo="https://telegra.ph/file/86336252ab3c5125c2a6b.jpg",
+                photo="https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg",
                 reply_markup=keyboard,
-                caption="This Is Music Bot Assistant If U Want To Talk With My Master Click Below",
+                caption="This Is Pyrogram base spam bot ,if u want to talk my master join @kaalxsupport",
             )
             return
 
@@ -59,7 +59,7 @@ async def autopmPermiat(client: USER, message: Message):
         return
     message.continue_propagation()    
     
-@Client.on_message(filters.command("a", [".", ""]) & filters.me & filters.private)
+@Client.on_message(filters.command("a", HNDLR) & filters.me & filters.private)
 async def pmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
     if not chat_id in pchats:
@@ -69,7 +69,7 @@ async def pmPermiat(client: USER, message: Message):
     message.continue_propagation()    
     
 
-@Client.on_message(filters.command("da", [".", ""]) & filters.me & filters.private)
+@Client.on_message(filters.command("da", HNDLR) & filters.me & filters.private)
 async def rmpmPermiat(client: USER, message: Message):
     chat_id = message.chat.id
     if chat_id in pchats:
