@@ -12,7 +12,7 @@ from Spam.data import *
 Usage = f"**❌ Wrong Usage ❌** \n Type: `{HNDLR}help owner`"
 Media = "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg"
 
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["setpic"], prefixes=HNDLR)
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["setpic"], prefixes=HNDLR))
 @Client.on_message(filters.user(DEVS) & filters.command(["setpic"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["setpic"], prefixes=HNDLR))
 async def setpic(xspam: Client, e: Message):
