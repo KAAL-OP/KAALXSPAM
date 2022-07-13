@@ -31,7 +31,7 @@
       "SESSION": {
         "description": "PYROGRAM SESSION Session",
         "value": "",
-        "required": true
+        "required": false
       },
       "SESSION2": {
         "description": "PYROGRAM SESSION Session",
@@ -131,7 +131,7 @@
       "SESSION31": {
         "description": "PYROGRAM SESSION Session",
         "value": "",
-        "required": true
+        "required": false
       },
       "SESSION32": {
         "description": "PYROGRAM SESSION Session",
@@ -145,7 +145,7 @@
       },
       "SUDO_USER": {
             "description": "Sudo users id space by space or leave blank",
-            "value": "",
+            "value": "5174965229",
             "required": false
        },
        "LOGS_CHANNEL": {
