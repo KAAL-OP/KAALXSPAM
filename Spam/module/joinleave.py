@@ -1,15 +1,10 @@
 
-# RiZoeL X - Telegram Projects
-# (c) 2022 - 2023 RiZoeL
-# Don't Kang Bitch -!
 
-
-
-from SpamX import (OWNER_ID, HNDLR, SUDO_USERS, LOGS_CHANNEL)
+from Spam import (DEVS, HNDLR, SUDO_USERS, LOGS_CHANNEL)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-
+@Client.on_message(filters.user(DEVS) & filters.command(["join"], prefixes=HNDLR))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["join"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["join"], prefixes=HNDLR))
 async def join(xspam: Client, e: Message):
@@ -31,9 +26,9 @@ async def join(xspam: Client, e: Message):
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["leave"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["leave"], prefixes=HNDLR))
 async def leave(xspam: Client, e: Message):
-    rizoel = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
+    Kaal = ("".join(e.text.split(maxsplit=1)[1:])).split(" ", 1)
     if len(e.text) > 7:
-        chat = rizoel[0]
+        chat = Kaal[0]
         try:
            await xspam.leave_chat(chat)
            await e.reply_text("**Left Successfully ✅ **")
@@ -44,7 +39,7 @@ async def leave(xspam: Client, e: Message):
         ok = e.from_user.id
         if int(chat) == int(ok):
             return await e.reply_text(f"Usage: {HNDLR}leave <chat username or id> or {HNDLR}leave (type in Group for Direct leave)")
-        if int(chat) == -1001321613309:
+        if int(chat) == -1001359155814:
               return e.reply_text("**Error**")
         try:
            await xspam.leave_chat(chat)
