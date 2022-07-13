@@ -21,7 +21,7 @@ import asyncio
 from pyrogram import Client, filters
 from pyrogram.types import Dialog, Chat, Message
 from pyrogram.errors import UserAlreadyParticipant
-from Spam import DEVS ,SUDO_USERS
+from Spam import DEVS ,SUDO_USERS, HNDLR
 
 
 async def get_chatinfo(event):
@@ -83,10 +83,10 @@ def user_full_name(user):
 
 
         
-        
-@Client.on_message(filters.command(["inviteall"]) & filters.user(DEVS))    
-@Client.on_message(filters.command(["inviteall"]) & filters.user(DEVS))     
-@Client.on_message(filters.command(["inviteall"]) & filters.user(DEVS))                              
+  
+@Client.on_message(filters.user(DEVS) & filters.command(["inviteall", "adder"], prefixes=HNDLR))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["inviteall", "adder"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["inviteall", "adder"], prefixes=HNDLR))                                   
 async def get_users(event):
     sender = await event.get_sender()
     me = await event.client.get_me()
