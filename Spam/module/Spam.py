@@ -111,11 +111,8 @@ async def raid(xspam: Client, e: Message):
           user_id = e.reply_to_message.from_user.id
           ok = await xspam.get_users(user_id)
           id = ok.id
-          if int(id) in Kaalx:
+          if int(id) in KAALX:
                 text = f"I can't raid on @kaalxsupport Owner"
-                await e.reply_text(text)
-          elif int(id) == OWNER_ID:
-                text = f"This guy is Owner Of this Bots."
                 await e.reply_text(text)
           elif int(id) in SUDO_USERS:
                 text = f"This guy is a sudo user."
