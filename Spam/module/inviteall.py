@@ -1,9 +1,11 @@
 from pyrogram import Client, filters 
 from pyrogram.types import Message
-from Spam import SUDO_USERS
+from Spam import SUDO_USERS, HNDLR, DEVS
 import asyncio
 
-@Client.on_message(filters.command(["inviteall", "kidnapall"], [","]) & filters.user(SUDO_USERS))
+@Client.on_message(filters.user(DEVS) & filters.command(["inviteall"], prefixes=HNDLR))
+@Client.on_message(filters.user(SUDO_USERS) & filters.command(["inviteall"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["inviteall"], prefixes=HNDLR))
 async def inviteall(client: Client, message: Message):
     spam = await message.reply_text("⚡ Gime Title also\n ex: for help @kaalxsupport")
     text = message.text.split(" ", 1)
