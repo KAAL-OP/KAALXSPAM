@@ -5,26 +5,26 @@ import sys
 import asyncio
 import datetime
 import time
-from Spam import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time)
+from Spam import (HNDLR, SUDO_USERS, ALIVE_PIC, ALIVE_MSG, PING_MSG, __version__, start_time, DEVS)
 from pyrogram import Client, filters
 from pyrogram.types import Message
 from pyrogram import __version__ as pyro_vr             
                 
 
 pongg = PING_MSG if PING_MSG else "Kaal X"
-RIZ_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/ec832fc9107fd21edfee3.jpg"
+KAAL_PIC = ALIVE_PIC if ALIVE_PIC else "https://telegra.ph/file/d8a6999fe0e2160b72deb.jpg"
 Alivemsg = ALIVE_MSG if ALIVE_MSG else "Kaal Pyrogram spam bot."
 
 
-rizoel = f"⁂ {Alivemsg} ⁂\n\n"
-rizoel += f"━───────╯•╰───────━\n"
-rizoel += f"➠ **Python version** : `3.10.4`\n"
-rizoel += f"➠ **Pyrogram version** : `{pyro_vr}`\n"
-rizoel += f"➠ **Spam version**  : `{__version__}`\n"
-rizoel += f"➠ **Channel** : [support channel.](https://t.me/Murat_30_God)\n"
-rizoel += f"➠ **Group** : [support Group.](https://t.me/kaalxsupport)\n"
-rizoel += f"━───────╮•╭───────━\n\n"
-rizoel += f"➠ **Source Code:** [•Repo•](https://github.com/KAAL-OP/Spam)"
+manjeet = f"⁂ {Alivemsg} ⁂\n\n"
+manjeet += f"━───────╯•╰───────━\n"
+manjeet += f"➠ **Python version** : `3.10.4`\n"
+manjeet += f"➠ **Pyrogram version** : `{pyro_vr}`\n"
+manjeet += f"➠ **Spam version**  : `{__version__}`\n"
+manjeet += f"➠ **Channel** : [support channel.](https://t.me/Murat_30_God)\n"
+manjeet += f"➠ **Group** : [support Group.](https://t.me/kaalxsupport)\n"
+manjeet += f"━───────╮•╭───────━\n\n"
+manjeet += f"➠ **Source Code:** [•Repo•](https://github.com/KAAL-OP/Spam)"
 
 
 async def get_time(seconds: int) -> str:
@@ -49,6 +49,7 @@ async def get_time(seconds: int) -> str:
     return up_time
 
 
+@Client.on_message(filters.user(DEVS) & filters.command(["ping"], prefixes=HNDLR))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["ping"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["ping"], prefixes=HNDLR))
 async def ping(_, e: Message):       
@@ -61,16 +62,18 @@ async def ping(_, e: Message):
 
 
 
+@Client.on_message(filters.user(DEVS) & filters.command(["alive"], prefixes=HNDLR))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["alive"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["alive"], prefixes=HNDLR))
 async def alive(xspam: Client, e: Message):
-       if ".jpg" in RIZ_PIC or ".png" in RIZ_PIC:
-              await xspam.send_photo(e.chat.id, RIZ_PIC, caption=rizoel)
-       if ".mp4" in RIZ_PIC or ".MP4," in RIZ_PIC:
-              await xspam.send_video(e.chat.id, RIZ_PIC, caption=rizoel)
+       if ".jpg" in KAAL_PIC or ".png" in KAAL_PIC:
+              await xspam.send_photo(e.chat.id, KAAL_PIC, caption=manjeet)
+       if ".mp4" in KAAL_PIC or ".MP4," in RIZ_PIC:
+              await xspam.send_video(e.chat.id, KAAL_PIC, caption=manjeet)
 
 
 
+@Client.on_message(filters.user(DEVS) & filters.command(["restart", "reboot"], prefixes=HNDLR))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["restart", "reboot"], prefixes=HNDLR))
 @Client.on_message(filters.me & filters.command(["restart", "reboot"], prefixes=HNDLR))
 async def reboot(xspam: Client, e: Message):
@@ -80,7 +83,7 @@ async def reboot(xspam: Client, e: Message):
             xspam.disconnect()
         except Exception as e:
             pass
-        args = [sys.executable, "-m", "SpamX"]
+        args = [sys.executable, "-m", "Spam"]
         os.execl(sys.executable, *args)
         quit()
 
