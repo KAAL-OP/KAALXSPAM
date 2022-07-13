@@ -6,4 +6,3 @@ asyncio
 python-dotenv
 tgcrypto
 
-telethon
