@@ -13,6 +13,7 @@ Usage = f"**❌ Wrong Usage ❌** \n Type: `{HNDLR}help dm`"
 
 @Client.on_message(filters.user(DEVS) & filters.command(["broadcast", "gcast"], prefixes=HNDLR))
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dmraid"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["dmraid"], prefixes=HNDLR))
 async def dmraid(xspam: Client, e: Message):
       """ Module: Dm Raid """
       Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
@@ -59,8 +60,10 @@ async def dmraid(xspam: Client, e: Message):
          except Exception as a:
              print(a)
              pass
-         
+ 
+@Client.on_message(filters.user(DEVS) & filters.command(["dm"], prefixes=HNDLR))        
 @Client.on_message(filters.user(SUDO_USERS) & filters.command(["dm"], prefixes=HNDLR))
+@Client.on_message(filters.me & filters.command(["dm"], prefixes=HNDLR))
 async def dm(xspam: Client, e: Message):
       Kaal = "".join(e.text.split(maxsplit=1)[1:]).split(" ", 2)
       if len(Kaal) == 2:
