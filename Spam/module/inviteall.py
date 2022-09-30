@@ -1,25 +1,44 @@
-from pyrogram import Client, filters 
+from pyrogram import filters 
+from pyrogram import Client as app
 from pyrogram.types import Message
 from Spam import SUDO_USERS, HNDLR, DEVS
 import asyncio
 
-@Client.on_message(filters.user(DEVS) & filters.command(["inviteall"], prefixes=HNDLR))
-@Client.on_message(filters.user(SUDO_USERS) & filters.command(["inviteall"], prefixes=HNDLR))
-@Client.on_message(filters.me & filters.command(["inviteall"], prefixes=HNDLR))
-async def inviteall(client: Client, message: Message):
-    spam = await message.reply_text("⚡ Gime Title also\n ex: for help @kaalxsupport")
-    text = message.text.split(" ", 1)
-    queryy = text[1]
-    chat = await client.get_chat(queryy)
-    tgchat = message.chat
-    await zaid.edit_text(f"inviting users from {chat.username}")
-    async for member in client.iter_chat_members(chat.id):
-        user= member.user
-        zxb= ["online", "offline" , "recently", "within_week"]
-        if user.status in zxb:
-           try:
-            await client.add_chat_members(tgchat.id, user.id)
-           except Exception as e:
-            mg= await client.send_message("me", f"error-   {e}")
-            await asyncio.sleep(0.3)
-            await mg.delete()
+@app.on_message(filters.user(DEVS) & filters.command(["inviteall"], prefixes=HNDLR))
+@app.on_message(filters.user(SUDO_USERS) & filters.command(["inviteall"], prefixes=HNDLR))
+@app.on_message(filters.me & filters.command(["inviteall"], prefixes=HNDLR))
+async def copy_members(client, message):
+# by : @ZDDDU 
+      chat_id = message.text.split(None, 2)[1]
+      # by : @ZDDDU 
+      m = await message.reply("~ Processing...")
+      # by : @ZDDDU 
+      c = 0
+      # by : @ZDDDU 
+      async for member in app.get_chat_members(chat_id):
+      # by : @ZDDDU 
+            try:
+            # by : @ZDDDU 
+              await app.add_chat_members(message.chat.id, member.user.id)
+              # by : @ZDDDU 
+              c += 1
+              # by : @ZDDDU 
+            except Exception:
+            # by : @ZDDDU 
+              pass
+      try:
+      # by : @ZDDDU 
+        await m.delete()
+        # by : @ZDDDU 
+        await message.delete()
+        # by : @ZDDDU 
+        await message.reply(f" Done {c}")
+        # by : @ZDDDU 
+      except:
+      # by : @ZDDDU 
+        pass
+# by : @ZDDDU 
+print("🟢")
+# by : @ZDDDU 
+# by : @ZDDDU 
+# by : @ZDDDU 
